@@ -1,0 +1,6 @@
+.col-md-2
+.col-md-8
+  .h4 = "For search term \"#{params[:keywords]}\" found"
+  - if @projects.try(:[], 'items').present?
+    - @projects['items'].each do |item|
+      = render partial: 'pages/search_item', locals: { item: item }

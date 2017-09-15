@@ -3,11 +3,13 @@ development:
   encoding: unicode
   database: github_browser_db
   pool: 5
-  username: postgres
+  username:
+  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: github_browser_db
   pool: 5
-  username: postgres
+  username:
+  password:

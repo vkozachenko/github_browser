@@ -1,0 +1,15 @@
+div.navbar.navbar-inverse
+  .col-md-6.text-left.h1
+    = link_to 'MobiDev GitHub Browser', root_path, class: 'h1'
+    '  >>
+    - if is_homepage?
+      ' Main
+    - if is_project_page?
+      ' Project
+    - if is_user_page?
+      ' User
+    - if is_search_page?
+      ' Search
+  .col-md-6.text-right.align-middle
+    = form_tag search_path, method: :get, class: 'form-inline navbar-form'
+      = text_field_tag :keywords, params[:keywords], value: '', placeholder: 'Search projects', id: 'inp', class: 'search-input form-control', autocomplete: 'off'

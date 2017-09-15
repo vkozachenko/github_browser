@@ -1,0 +1,4 @@
+= form_for @like, method: :delete do |f|
+  = f.hidden_field :id, value: id
+  = f.hidden_field :redirect_page, value: @page
+  = f.submit "Unlike", class: "btn btn-xs btn-danger"

@@ -1,0 +1,5 @@
+div#like_form
+  - if like?(id, subject)
+    = render partial: 'pages/unlike', locals: { id: id, subject: subject }
+  - else
+    = render partial: 'pages/like', locals: { id: id, subject: subject }

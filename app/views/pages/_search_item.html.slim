@@ -1,0 +1,19 @@
+.col-md-12.well
+  .col-md-12.span12
+    .col-md-4.span4
+      = link_to item['name'], project_path(item['owner']['login'], item['name'])
+    .col-md-4.span4
+      - if item['homepage'].present?
+        = link_to item['homepage'], item['homepage']
+    .col-md-4.span4
+      = link_to item['owner']['login'], user_path(item['owner']['login'])
+  .col-md-12.span12
+    = item['description']
+  .col-md-12.span12
+    .col-md-6.span6
+      ' watchers:
+      = item['watchers_count']
+    .col-md-6.span6
+      .col-md-6.span6
+        ' forks:
+        = item['forks_count']

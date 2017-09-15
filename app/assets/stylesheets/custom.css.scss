@@ -1,0 +1,16 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+.pad{
+  padding-bottom: 4px;
+}
+
+.h1{
+  color: #666666;
+  font-weight: bold;
+}
+
+a.h1, a.h1:hover, a.h1:visited, a.h1:active {
+  color: #DADADA;
+  text-decoration: none;
+}

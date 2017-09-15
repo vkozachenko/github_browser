@@ -1,0 +1,18 @@
+.col-md-2
+.col-md-8
+  .col-md-4
+    = image_tag @user['avatar_url'], width: '70%', class: 'image-responsive center-block'
+    .text-center
+      = render partial: 'pages/like_form', locals: { id: @user['id'], subject: :user }
+  .col-md-8
+    .h2 = @user['name']
+    p = @user['login']
+    p
+      'Company:
+      = @user['company']
+    p
+      'Blog:
+      = link_to @user['blog'], uri_for(@user['blog'])
+    p
+      'Folowers:
+      = @user['followers']

@@ -1,0 +1,35 @@
+- if @project.present?
+  div.col-md-2
+  div.col-md-6
+    h3 = @project['full_name']
+    p
+      'Description:
+      = @project['description']
+    p
+      'watchers:
+      = @project['watchers_count']
+    p
+      'forks:
+      = @project['forks_count']
+    p
+      'open issues:
+      = @project['open_issues_count']
+    p
+      'homepage:
+      = link_to @project['homepage'], @project['homepage']
+    p
+      'GitHub repo:
+      = link_to @project['html_url'], @project['html_url']
+    p
+      'created at:
+      = @project['created_at']
+    p
+      = render partial: 'pages/like_form', locals: { id: @project['id'], subject: :project }
+  div.col-md-4
+    h3 Contributors:
+    - if @contributors.present?
+      - @contributors.each do |user|
+        .col-md-8.pad
+          = link_to user['login'], user_path(user['login'])
+- else
+  .alert.alert-danger Oops! It's impossible to load data now. Try later!
